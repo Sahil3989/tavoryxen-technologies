@@ -1,431 +1,654 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Tavoryxen Technologies - Smart Software, Web Apps and Digital Solutions.">
-<title>Tavoryxen Technologies | Smart Software Solutions</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TAVORYXEN TECHNOLOGIES builds smart, simple and useful software solutions for businesses, education and everyday work.">
+  <title>TAVORYXEN TECHNOLOGIES | Smart Software. Simple Solutions.</title>
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-    scroll-behavior: smooth;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
-body {
-    background: #080d1a;
-    color: #ffffff;
-}
+    :root {
+      --background: #07111f;
+      --surface: #101e31;
+      --surface-light: #162941;
+      --primary: #38bdf8;
+      --secondary: #818cf8;
+      --text: #f1f5f9;
+      --muted: #a9b8ca;
+      --border: rgba(255,255,255,0.10);
+    }
 
-header {
-    width: 100%;
-    padding: 20px 7%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #101a30;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    border-bottom: 1px solid #263653;
-}
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.7;
+    }
 
-.logo {
-    font-size: 23px;
-    font-weight: bold;
-    color: #53c8ff;
-}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-.logo span {
-    color: white;
-}
+    .container {
+      width: 90%;
+      max-width: 1150px;
+      margin: auto;
+    }
 
-nav {
-    display: flex;
-    gap: 25px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-nav a:hover {
-    color: #53c8ff;
-}
-
-.hero {
-    min-height: 570px;
-    padding: 100px 7%;
-    display: flex;
-    align-items: center;
-    background: linear-gradient(120deg, #101a30, #102b50, #080d1a);
-}
-
-.hero-content {
-    max-width: 750px;
-}
-
-.tag {
-    color: #53c8ff;
-    font-size: 14px;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-}
-
-.hero h1 {
-    font-size: 53px;
-    line-height: 1.2;
-    margin-bottom: 22px;
-}
-
-.hero h1 span {
-    color: #53c8ff;
-}
-
-.hero p {
-    color: #bdc9dc;
-    font-size: 17px;
-    line-height: 1.8;
-    margin-bottom: 30px;
-}
-
-.btn {
-    display: inline-block;
-    background: #159fe5;
-    color: white;
-    padding: 14px 25px;
-    border-radius: 7px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.btn:hover {
-    background: #087fc0;
-}
-
-section {
-    padding: 80px 7%;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 34px;
-    margin-bottom: 15px;
-}
-
-.section-desc {
-    text-align: center;
-    color: #aebbd0;
-    margin-bottom: 45px;
-    line-height: 1.7;
-}
-
-.about {
-    background: #0d1527;
-}
-
-.about-box {
-    max-width: 850px;
-    margin: auto;
-    text-align: center;
-    color: #bdc9dc;
-    font-size: 16px;
-    line-height: 1.9;
-}
-
-.products {
-    background: #080d1a;
-}
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-}
-
-.card {
-    background: #111e35;
-    padding: 30px 24px;
-    border: 1px solid #263b5c;
-    border-radius: 12px;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-7px);
-    border-color: #53c8ff;
-}
-
-.card-icon {
-    font-size: 35px;
-    margin-bottom: 20px;
-}
-
-.card h3 {
-    margin-bottom: 15px;
-    color: #53c8ff;
-}
-
-.card p {
-    color: #bdc9dc;
-    line-height: 1.7;
-    font-size: 14px;
-}
-
-.status {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 7px 12px;
-    background: #1c3048;
-    color: #53c8ff;
-    border-radius: 20px;
-    font-size: 12px;
-}
-
-.services {
-    background: #0d1527;
-}
-
-.service-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.service {
-    padding: 25px;
-    background: #111e35;
-    border-radius: 10px;
-    border: 1px solid #263b5c;
-}
-
-.service h3 {
-    color: #53c8ff;
-    margin-bottom: 12px;
-}
-
-.service p {
-    color: #bdc9dc;
-    line-height: 1.7;
-}
-
-.contact {
-    text-align: center;
-    background: linear-gradient(120deg, #102b50, #101a30);
-}
-
-.contact p {
-    color: #bdc9dc;
-    margin: 20px auto 30px;
-    line-height: 1.8;
-}
-
-footer {
-    padding: 28px 7%;
-    background: #050914;
-    text-align: center;
-    color: #9baac0;
-    font-size: 13px;
-    line-height: 1.8;
-}
-
-@media(max-width: 800px) {
     header {
-        padding: 18px 5%;
-        flex-wrap: wrap;
-        gap: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(7,17,31,0.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
     }
 
-    nav {
-        width: 100%;
-        gap: 16px;
-        flex-wrap: wrap;
+    .navbar {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
     }
 
-    nav a {
-        font-size: 13px;
+    .logo {
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: white;
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .menu-btn {
+      display: none;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: white;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 20px;
+      cursor: pointer;
     }
 
     .hero {
-        min-height: 480px;
-        padding: 75px 6%;
+      padding: 105px 0 95px;
+      text-align: center;
+      background:
+        radial-gradient(ellipse at top, rgba(56,189,248,0.16), transparent 60%),
+        var(--background);
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 7px 15px;
+      border: 1px solid rgba(56,189,248,0.35);
+      border-radius: 30px;
+      color: var(--primary);
+      font-size: 13px;
+      margin-bottom: 22px;
     }
 
     .hero h1 {
-        font-size: 37px;
+      font-size: clamp(36px, 6vw, 64px);
+      line-height: 1.15;
+      max-width: 850px;
+      margin: 0 auto 22px;
     }
 
-    .product-grid,
-    .service-grid {
-        grid-template-columns: 1fr;
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 680px;
+      margin: 0 auto 30px;
+      font-size: 17px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 23px;
+      border-radius: 8px;
+      background: linear-gradient(100deg, var(--primary), var(--secondary));
+      color: #07111f;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      border: 1px solid var(--primary);
+      margin-left: 10px;
     }
 
     section {
-        padding: 65px 6%;
+      padding: 80px 0;
+      scroll-margin-top: 75px;
     }
 
-    .section-title {
-        font-size: 28px;
+    .section-heading {
+      text-align: center;
+      margin-bottom: 42px;
     }
-}
-</style>
+
+    .section-heading h2 {
+      font-size: clamp(27px, 4vw, 38px);
+      margin-bottom: 10px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .about-text h3 {
+      font-size: 25px;
+      margin-bottom: 15px;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .about-panel {
+      background: linear-gradient(145deg, var(--surface-light), var(--surface));
+      border: 1px solid var(--border);
+      padding: 30px;
+      border-radius: 16px;
+    }
+
+    .about-panel h3 {
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .about-panel p {
+      color: var(--muted);
+    }
+
+    .products {
+      background: #0a1728;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      padding: 27px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(56,189,248,0.6);
+    }
+
+    .card-icon {
+      font-size: 34px;
+      margin-bottom: 16px;
+    }
+
+    .status {
+      display: inline-block;
+      align-self: flex-start;
+      color: #fbbf24;
+      background: rgba(251,191,36,0.10);
+      border: 1px solid rgba(251,191,36,0.25);
+      border-radius: 20px;
+      padding: 4px 10px;
+      font-size: 11px;
+      margin-bottom: 14px;
+    }
+
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .card .btn {
+      align-self: flex-start;
+      font-size: 13px;
+      padding: 10px 16px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service {
+      padding: 25px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    .service h3 {
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    .service p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .contact-box {
+      text-align: center;
+      background: linear-gradient(135deg, #122b43, #172044);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 45px 25px;
+    }
+
+    .contact-box h2 {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      max-width: 620px;
+      margin: 0 auto 22px;
+    }
+
+    .contact-note {
+      font-size: 13px;
+      margin-top: 17px !important;
+    }
+
+    .policy {
+      background: #0a1728;
+    }
+
+    .policy-content {
+      max-width: 850px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .policy-content h3 {
+      color: var(--text);
+      margin: 20px 0 7px;
+    }
+
+    footer {
+      padding: 28px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    footer a {
+      color: var(--primary);
+      margin: 0 8px;
+    }
+
+    @media (max-width: 800px) {
+      .card-grid,
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .navbar {
+        min-height: 68px;
+      }
+
+      .logo {
+        font-size: 15px;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        width: 100%;
+        padding: 18px 5%;
+        background: #0b192b;
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 17px;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .hero {
+        padding: 75px 0;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .btn-outline {
+        margin: 12px 0 0;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .card-grid,
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-box {
+        padding: 35px 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-    <div class="logo">TAVORYXEN <span>TECHNOLOGIES</span></div>
+  <header>
+    <div class="container navbar">
+      <a href="#home" class="logo">TAVORYXEN <span>TECHNOLOGIES</span></a>
 
-    <nav>
+      <button class="menu-btn" id="menuBtn" aria-label="Open navigation menu">☰</button>
+
+      <nav class="nav-links" id="navLinks">
         <a href="#home">Home</a>
         <a href="#about">About</a>
-        <a href="#products">Software</a>
+        <a href="#software">Software</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
-    </nav>
-</header>
+      </nav>
+    </div>
+  </header>
 
-<main>
+  <main>
 
-<section class="hero" id="home">
-    <div class="hero-content">
-        <div class="tag">WELCOME TO TAVORYXEN TECHNOLOGIES</div>
-
-        <h1>
-            Smart Software.<br>
-            <span>Simple Solutions.</span>
-        </h1>
-
+    <section class="hero" id="home">
+      <div class="container">
+        <span class="tag">SOFTWARE & DIGITAL SOLUTIONS</span>
+        <h1>Smart Software.<br><span>Simple Solutions.</span></h1>
         <p>
-            We create useful software, modern web applications
-            and digital solutions designed to make everyday
-            work easier and smarter.
+          We aim to make everyday work easier with practical,
+          reliable and easy-to-use software solutions for businesses,
+          education and modern digital needs.
         </p>
+        <a href="#software" class="btn">Explore Our Software</a>
+        <a href="#about" class="btn btn-outline">About Us</a>
+      </div>
+    </section>
 
-        <a href="#products" class="btn">Explore Our Software</a>
-    </div>
-</section>
+    <section id="about">
+      <div class="container about-grid">
+        <div class="about-text">
+          <h3>About TAVORYXEN TECHNOLOGIES</h3>
+          <p>
+            TAVORYXEN TECHNOLOGIES is a software initiative focused on
+            developing useful digital products and technology solutions.
+          </p>
+          <p>
+            Our goal is to simplify everyday tasks through software
+            that is practical, understandable and accessible.
+          </p>
+          <p>
+            We are working towards solutions for small businesses,
+            educational organisations and users interested in AI tools.
+          </p>
+        </div>
 
-<section class="about" id="about">
-    <h2 class="section-title">About Our Company</h2>
+        <div class="about-panel">
+          <h3>Our Vision</h3>
+          <p>
+            To create useful technology that saves time, improves
+            productivity and makes digital tools easier to use.
+          </p>
+        </div>
+      </div>
+    </section>
 
-    <p class="section-desc">
-        Building useful digital solutions for everyone.
-    </p>
+    <section class="products" id="software">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Our Software Products</h2>
+          <p>
+            Explore the software solutions we are planning and developing.
+            Product demos and full access will be announced when ready.
+          </p>
+        </div>
 
-    <div class="about-box">
-        Tavoryxen Technologies is an independent software
-        brand focused on creating modern, simple and useful
-        digital products.
+        <div class="card-grid">
 
-        Our goal is to develop software that helps people,
-        businesses and organizations solve everyday problems
-        through technology.
-    </div>
-</section>
-
-<section class="products" id="products">
-    <h2 class="section-title">Our Software</h2>
-
-    <p class="section-desc">
-        Discover our upcoming software products.
-    </p>
-
-    <div class="product-grid">
-
-        <div class="card">
+          <article class="card">
             <div class="card-icon">📊</div>
+            <span class="status">Coming Soon</span>
             <h3>Business Management Software</h3>
             <p>
-                Simple tools for Business Management Software records,
-                customers and daily operations.
+              Manage billing, sales, expenses, inventory and daily
+              business records in one place. Designed with small
+              shops and businesses in mind.
             </p>
-            <span class="status">Coming Soon</span>
-        </div>
+            <a href="#contact" class="btn">Request Information</a>
+          </article>
 
-        <div class="card">
+          <article class="card">
             <div class="card-icon">🎓</div>
+            <span class="status">Coming Soon</span>
             <h3>Education Management Software</h3>
             <p>
-                Useful solutions for managing students,
-                attendance and educational records.
+              Organise student records, attendance, fees, classes
+              and other daily activities for coaching centres
+              and educational institutions.
             </p>
-            <span class="status">Coming Soon</span>
-        </div>
+            <a href="#contact" class="btn">Request Information</a>
+          </article>
 
-        <div class="card">
+          <article class="card">
             <div class="card-icon">🤖</div>
-            <h3>AI Software Tools & Automation</h3>
-            <p>
-                Smart digital tools designed to make
-                everyday tasks easier.
-            </p>
             <span class="status">Coming Soon</span>
+            <h3>AI Software Tools &amp; Automation</h3>
+            <p>
+              Explore planned AI-powered tools designed to help
+              users simplify creative tasks, save time and improve
+              everyday productivity.
+            </p>
+            <a href="#contact" class="btn">Request Information</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Our Services</h2>
+          <p>
+            Our planned services focus on practical software
+            and digital solutions.
+          </p>
         </div>
 
+        <div class="services-grid">
+          <div class="service">
+            <h3>Custom Software</h3>
+            <p>
+              Software solutions planned around real business
+              and user requirements.
+            </p>
+          </div>
+
+          <div class="service">
+            <h3>Business Solutions</h3>
+            <p>
+              Digital tools to help organise business operations
+              and daily records.
+            </p>
+          </div>
+
+          <div class="service">
+            <h3>AI Tools &amp; Automation</h3>
+            <p>
+              Useful AI-based tools and automation ideas for
+              everyday digital tasks.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <h2>Have a Software Requirement?</h2>
+          <p>
+            Interested in one of our products or have an idea
+            for a software solution? Customer contact and demo
+            request facilities are being prepared.
+          </p>
+          <span class="btn" aria-disabled="true">Online Contact Coming Soon</span>
+          <p class="contact-note">
+            Online chat, demo requests and payment facilities
+            will be activated after setup.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="policy" id="privacy">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Privacy Policy</h2>
+          <p>Information about this website.</p>
+        </div>
+
+        <div class="policy-content">
+          <p>
+            This website currently provides general information about
+            TAVORYXEN TECHNOLOGIES and its planned software products.
+            The current version does not provide customer accounts,
+            online payments or a working contact form.
+          </p>
+          <p>
+            If these features are introduced, the privacy policy
+            will be updated to explain what information is collected,
+            how it is used and how it is protected.
+          </p>
+
+          <h3>Terms of Use</h3>
+          <p>
+            Website content is provided for general information.
+            Product features, availability and services may change
+            as development progresses. Product access and payment
+            terms will be published before any product is offered
+            for purchase.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> TAVORYXEN TECHNOLOGIES. All rights reserved.</p>
+      <p>
+        <a href="#privacy">Privacy Policy</a>
+        <a href="#privacy">Terms of Use</a>
+        <a href="#home">Back to Top</a>
+      </p>
     </div>
-</section>
+  </footer>
 
-<section class="services" id="services">
-    <h2 class="section-title">What We Do</h2>
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
 
-    <p class="section-desc">
-        Technology solutions for modern needs.
-    </p>
+    menuBtn.addEventListener("click", function () {
+      navLinks.classList.toggle("show");
+    });
 
-    <div class="service-grid">
+    document.querySelectorAll(".nav-links a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("show");
+      });
+    });
 
-        <div class="service">
-            <h3>Web Applications</h3>
-            <p>
-                Modern web applications for mobile
-                and computer users.
-            </p>
-        </div>
-
-        <div class="service">
-            <h3>Software Development</h3>
-            <p>
-                Practical software solutions for
-                individuals and businesses.
-            </p>
-        </div>
-
-        <div class="service">
-            <h3>Digital Solutions</h3>
-            <p>
-                Useful digital products designed
-                around real-world problems.
-            </p>
-        </div>
-
-    </div>
-</section>
-
-<section class="contact" id="contact">
-    <h2 class="section-title">Let's Connect</h2>
-
-    <p>
-        Interested in our software or have a question?
-        Get in touch with us.
-    </p>
-
-    <a href="#products" class="btn">Explore Products</a>
-</section>
-
-</main>
-
-<footer>
-    <p>© 2026 Tavoryxen Technologies. All Rights Reserved.</p>
-    <p>Smart Software. Simple Solutions.</p>
-</footer>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
 </body>
-          </html>
-          
+</html>
